@@ -1,0 +1,182 @@
+@import './variables.scss';
+
+.omc_common_label {
+  text-align: right;
+  font-size: 14px;
+  color: #606266;
+  line-height: 40px;
+  padding: 0 12px 0 0;
+  box-sizing: border-box;
+}
+
+.groupBorderSubTitle {
+  text-align:left;
+  font-size: 20px;
+  // font-weight: 500;
+  border-bottom: solid 1px #e6e6e6;
+  padding: 10px 0;
+}
+
+.seperateBottomBorder {
+  border-bottom: solid 1px #e6e6e6;
+}
+
+.omc_inline_Block {
+  display: inline-block;
+}
+
+.omc_Block {
+  display: block;
+}
+
+.omc_V_space_10 {
+  margin-top: 10px;
+}
+.omc_V_space_20 {
+  margin-top: 20px;
+}
+.omc_V_space_30 {
+  margin-top: 30px;
+}
+.omc_H_space_10 {
+  margin-left: 10px;
+}
+.omc_H_space_20 {
+  margin-left: 20px;
+}
+.omc_H_space_30 {
+  margin-left: 30px;
+}
+
+.dividing-line {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.table-size {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.table-size-nowrap {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.big-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+.small-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 150px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+}
+.big-avatar {
+  width: 178px;
+  height: auto;
+  display: block;
+}
+.small-avatar {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+// 一行显示上传文件按钮， 上后的图片， 模板下载
+.one-row-upload {
+  .el-upload-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    li {
+      float: left;
+      margin-top: 0px;
+    }
+  }
+
+  .upload-demo {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
+
+// ============================
+
+.formItem {
+  display: inline-block;
+  // width: 220px;
+  margin-bottom: 15px;
+  margin-right: 23px;
+  // &.formItemL {
+  //   width: 360px;
+  // }
+  // &.cols2 {
+  //   width: 470px;
+  // }
+  &:last-child {
+    margin-right: 0px;
+  }
+  .el-form-item__content {
+    .form-item-label {
+      display: block;
+    }
+    &>.el-input {
+      width: $formItemWidthS;
+      &.el-input-group {
+        width: $formItemWidthM;
+        .el-input-group__prepend {
+          width: $leftSelectWidth;
+        }
+      }
+    }
+    &>.el-select, .el-cascader {
+      width: $formItemWidthS;
+    }
+    &>.el-range-editor {
+      width: $formItemWidthM;
+    }
+  }
+  .combineSelector {
+    display: inline-table;
+    width: $formItemWidthM;
+    .leftSelect {
+      width: $leftSelectWidth;
+      input {
+        background-color: #f5f7fa;
+        border-color: #dcdfe6;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+        color: #909399;
+      }
+    }
+    .rightSelect {
+      display: table-cell;
+      width: 100%;
+      input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.common_dialog_custom {
+  .el-dialog__header {
+    border-bottom: 1px solid $color-c5;
+  }
+  .el-dialog__body {
+    padding: 20px 20px;
+  }
+}
