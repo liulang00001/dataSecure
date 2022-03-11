@@ -1,7 +1,7 @@
 export default {
   route: {
     dashboard: '首页',
-    dataSecurityConfig: '数据安全配置',
+    queryService: '数据安全配置',
     dataQueryConfig: '数据查询配置',
     fintechDomain: '互金业务域表',
     queryCategory: '数据查询目录表',

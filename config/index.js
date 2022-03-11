@@ -112,7 +112,7 @@ module.exports = {
      * then assetsPublicPath should be set to "/bar/".
      * In most cases please use '/' !!!
      */
-    assetsPublicPath: '/micro-dc-secure/', // If you are deployed on the root path, please use '/'
+    assetsPublicPath: '/micro-dc-meta/', // If you are deployed on the root path, please use '/'
 
     /**
      * Source Maps
