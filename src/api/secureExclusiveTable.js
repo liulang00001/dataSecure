@@ -30,6 +30,12 @@ export function queryTableSchema() {
     });
 };
 
+export function queryTableName() {
+    return get('secure-exclusive-table/query/tableName', null, {
+        hostType: 'LOCAL_SEVICE',
+    });
+};
+
 export function updSecureExclusiveTable(secureExclusiveTable) {
     return post('secure-exclusive-table/update', secureExclusiveTable, {
         hostType: 'LOCAL_SEVICE',

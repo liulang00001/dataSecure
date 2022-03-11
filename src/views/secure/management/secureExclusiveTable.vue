@@ -3,19 +3,34 @@
     <div class="table">
       <el-card>
         <div slot="header">
-          <el-row :gutter="10">
+          <el-row :gutter="12">
             <el-col :span="3">
               <el-button type="primary" @click="addDialogVisible = true"
                 >添加记录</el-button
               >
             </el-col>
-            <el-col :offset="14" :span="4">
+            <el-col :span="4">
               <el-select
+                @blur="tableListFromSchema"
                 v-model="selectDatasource"
-                placeholder="请选择数据库名称"
+                filterable placeholder="请选择数据库名称"
               >
                 <el-option
                   v-for="item in datasources"
+                  :key="item"
+                  :label="item"
+                  :value="item"
+                >
+                </el-option>
+              </el-select>
+            </el-col>
+            <el-col :span="4">
+              <el-select
+                v-model="selectTablesource"
+                filterable placeholder="请选择表名"
+              >
+                <el-option
+                  v-for="item in tablesources"
                   :key="item"
                   :label="item"
                   :value="item"
@@ -56,12 +71,13 @@
                   icon="el-icon-edit"
                   @click="updBtn(scope.row)"
                 ></el-button>
-                <el-button
+                <!-- 添加删除按钮 -->
+                <!-- <el-button
                   size="mini"
                   type="danger"
                   icon="el-icon-delete"
                   @click="delBtn(scope.row)"
-                ></el-button>
+                ></el-button> -->
               </template>
             </el-table-column>
           </el-table>
@@ -162,6 +178,7 @@ import {
   updSecureExclusiveTable,
   delSecureExclusiveTable,
   queryTableSchema,
+  queryTableName,
 } from "@/api/SecureExclusiveTable";
 
 import { querySourceIdMap } from "@/api/QuerySource";
@@ -178,7 +195,9 @@ export default {
         params: null,
       },
       datasources: [], // 数据库列表
+      tablesources: [], // 表名列表
       selectDatasource: "", // 选择的数据库
+      selectTablesource: "", // 选择的表名
       sourceIdMap: null, // 数据源ID匹配
       loading: true, // 加载
       totalCount: 0, // 记录数
@@ -231,7 +250,8 @@ export default {
         this.list = tempData.data;
 
         this.list.forEach((item) => {
-          item.sourceId = this.sourceIdMap.get(item.sourceId.toString());
+          if(this.sourceIdMap)
+            item.sourceId = this.sourceIdMap.get(item.sourceId.toString());
         });
       });
     },
@@ -245,7 +265,10 @@ export default {
         this.sourceIdMap = new Map(Object.entries(response.data.data));
       });
     },
-    // 获取数据库名称列表
+
+
+
+        // 获取数据库名称列表
     async getDatabases() {
       await queryTableSchema().then((response) => {
         if (response.status !== 200) {
@@ -254,15 +277,35 @@ export default {
 
         this.datasources = response.data.data;
       });
+
+
+      // // 获取表名名称列表
+      // await queryTableName().then((response) => {
+      //   if (response.status !== 200) {
+      //     return this.$message.error("获取数据库列表失败！");
+      //   }
+
+      //   this.tablesources = response.data.data;
+      // });
     },
+
+
+    //及联查询（选择数据库后显示table列表）
+    queryTableSchema(selectDatasource) {
+      this.pageRequestDTO.pageSize = newSize;
+      this.fetchData();
+    },
+
     // 给定数据库条件下查询数据
     fetchDataByCondition() {
       this.pageRequestDTO.params = {
         tableSchema: this.selectDatasource,
+        tableName: this.selectTablesource,
       };
 
       this.fetchData();
     },
+
     // 修改页数据大小
     handleSizeChange(newSize) {
       this.pageRequestDTO.pageSize = newSize;

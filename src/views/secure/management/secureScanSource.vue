@@ -3,9 +3,7 @@
     <div class="table">
       <el-card>
         <div slot="header">
-          <el-button type="primary" @click="addDialogVisible = true"
-            >添加记录</el-button
-          >
+          <el-button type="primary" @click="addDialogVisible = true">添加记录</el-button>
         </div>
 
         <!-- 表格数据 -->

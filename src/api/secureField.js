@@ -3,7 +3,9 @@ import { post, get } from '@/utils/simpleRequest';
 export function getTableData(pageRequestDTO) {
     const data = {
         pageNum: pageRequestDTO.pageNum,
-        pageSize: pageRequestDTO.pageSize
+        pageSize: pageRequestDTO.pageSize,
+        params: (pageRequestDTO.params === null ? null : pageRequestDTO.params)
+        
     };
     return post('secure-field/page/list', data, {
         hostType: 'LOCAL_SEVICE',

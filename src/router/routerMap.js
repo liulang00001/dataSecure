@@ -36,88 +36,89 @@ export const constantRouterMap = [
     }]
   },
   {
-    path: '/dataSecurityConfig',
+    path: '/global',
     component: Layout,
-    name: 'dataSecurityConfig',
-    meta: { title: 'dataSecurityConfig', icon: 'bug' },
+    name: 'global',
+    meta: { title: 'global', icon: 'bug' },
     children: [
       {
-        path: 'fintechDomain',
-        name: 'fintechDomain',
-        component: () => import('@/views/dataSecurityConfig/fintechDomain/index'),
-        meta: { title: 'fintechDomain', icon: 'chart' }
-      },
-
-      {
-        path: 'secureCategory',
-        name: 'secureCategory',
-        component: () => import('@/views/dataSecurityConfig/secureCategory/index'),
-        meta: { title: 'secureCategory', icon: 'list' }
-      },
-      {
-        path: 'secureExclusiveTable',
-        name: 'secureExclusiveTable',
-        component: () => import('@/views/dataSecurityConfig/secureExclusiveTable/index'),
-        meta: { title: 'secureExclusiveTable', icon: 'risk' }
-      },
-      {
-        path: 'secureField',
-        name: 'secureField',
-        component: () => import('@/views/dataSecurityConfig/secureField/index'),
-        meta: { title: 'secureField', icon: 'star' }
-      },
-      {
-        path: 'secureLevel',
-        name: 'secureLevel',
-        component: () => import('@/views/dataSecurityConfig/secureLevel/index'),
-        meta: { title: 'secureLevel', icon: 'payment' }
-      },
-      {
-        path: 'secureScanSource',
-        name: 'secureScanSource',
-        component: () => import('@/views/dataSecurityConfig/secureScanSource/index'),
-        meta: { title: 'secureScanSource', icon: 'message' }
-      },
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/global/management/fintechDomain'),
+        meta: { title: 'management', icon: 'chart' }
+      }
     ]
   },
   {
-    path: '/dataQueryConfig',
+    path: '/query',
     component: Layout,
-    name: 'dataQueryConfig',
-    meta: { title: 'dataQueryConfig', icon: 'drag' },
+    name: 'query',
+    meta: { title: 'query', icon: 'drag' },
     children: [
       {
-        path: 'queryCategory',
-        name: 'queryCategory',
-        component: () => import('@/views/dataQueryConfig/queryCategory/index'),
-        meta: { title: 'queryCategory', icon: 'cms' }
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/query/management/queryOrderConfig'),
+        meta: { title: 'management', icon: 'cms' }
       },
       {
-        path: 'queryOrderConfig',
-        name: 'queryOrderConfig',
-        component: () => import('@/views/dataQueryConfig/queryOrderConfig/index'),
-        meta: { title: 'queryOrderConfig', icon: 'component' }
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/query/management/queryOrderRelevance'),
+        meta: { title: 'management', icon: 'cms' }
       },
       {
-        path: 'queryOrderRelevance',
-        name: 'queryOrderRelevance',
-        component: () => import('@/views/dataQueryConfig/queryOrderRelevance/index'),
-        meta: { title: 'queryOrderRelevance', icon: 'edit' }
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/query/management/querySource'),
+        meta: { title: 'management', icon: 'cms' }
       },
       {
-        path: 'querySource',
-        name: 'querySource',
-        component: () => import('@/views/dataQueryConfig/querySource/index'),
-        meta: { title: 'querySource', icon: 'eye' }
-      },
-      {
-        path: 'queryTemplate',
-        name: 'queryTemplate',
-        component: () => import('@/views/dataQueryConfig/queryTemplate/index'),
-        meta: { title: 'queryTemplate', icon: 'lock' }
-      },
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/query/management/queryTemplate'),
+        meta: { title: 'management', icon: 'cms' }
+      }
     ]
   },
+  {
+    path: '/secure',
+    component: Layout,
+    name: 'secure',
+    meta: { title: 'secure', icon: 'drag' },
+    children: [
+      {
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/secure/management/secureCategory'),
+        meta: { title: 'management', icon: 'cms' }
+      },
+      {
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/secure/management/secureExclusiveTable'),
+        meta: { title: 'management', icon: 'cms' }
+      },
+      {
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/secure/management/secureField'),
+        meta: { title: 'management', icon: 'cms' }
+      },
+      {
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/secure/management/secureLevel'),
+        meta: { title: 'management', icon: 'cms' }
+      },
+      {
+        path: 'management',
+        name: 'management',
+        component: () => import('@/views/secure/management/secureScanSource'),
+        meta: { title: 'management', icon: 'cms' }
+      }
+    ]
+  }
 ];
 
 // 动态路由页面

@@ -3,9 +3,33 @@
     <div class="table">
       <el-card>
         <div slot="header">
-          <el-button type="primary" @click="addDialogVisible = true"
-            >添加记录</el-button
-          >
+          <el-row :gutter="12">
+            <el-col :span="3">
+              <el-button type="primary" @click="addDialogVisible = true"
+                >添加记录</el-button
+              >
+            </el-col>
+
+            <el-col :span="4">
+            <el-input v-model="inputSchame" placeholder="请输入数据库名称"></el-input>
+            </el-col>
+            <el-col :span="4">
+            <el-input v-model="inputTable" placeholder="请输入表名"></el-input>
+            </el-col>
+            <el-col :span="4">
+            <el-input v-model="inputField" placeholder="请输入字段名"></el-input>
+            </el-col>
+
+
+            <el-col :span="2">
+              <el-button
+                @click="fetchDataByCondition"
+                type="success"
+                circle
+                icon="el-icon-search"
+              ></el-button>
+            </el-col>
+          </el-row>
         </div>
 
         <!-- 表格数据 -->
@@ -221,6 +245,9 @@ import { querySourceIdMap } from "@/api/QuerySource";
 export default {
   data() {
     return {
+      inputSchame: '',//搜索数据库输入
+      inputTable: '',//搜索表名输入
+      inputField: '',//搜索字段输入
       list: [], // 表记录数据
       tableData: null, // 表数据
       pageRequestDTO: {
@@ -312,6 +339,17 @@ export default {
 
         this.sourceIdMap = new Map(Object.entries(response.data.data));
       });
+    },
+
+      // 给定查询条件下查询数据
+    fetchDataByCondition() {
+      this.pageRequestDTO.params = {
+        tableSchema: this.inputSchame,
+        tableName: this.inputTable,
+        fieldName: this.inputField,
+      };
+
+      this.fetchData();
     },
     // 修改页数据大小
     handleSizeChange(newSize) {

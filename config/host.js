@@ -13,6 +13,7 @@ module.exports = {
     NEW_COMMON: {
       mock: "http://alb-pay-front-mock-dev-721363715.ap-south-1.elb.amazonaws.com/mock/5c08e1e5bd9f9c3a01c5abea/omc/",
       dev: "https://omc-gate-dev.shareitpay.in/pay-omc-gateway/",
+      // dev: "localhost:8080/dc-secure/secure-exclusive-table"
     },
     GATEWAY_COMMON: {
       mock: "http://alb-pay-front-mock-dev-721363715.ap-south-1.elb.amazonaws.com/mock/5c08e1e5bd9f9c3a01c5abea/omc/",
