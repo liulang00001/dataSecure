@@ -163,7 +163,7 @@ import {
   querySecureCategory,
   updSecureCategory,
   delSecureCategory,
-} from "@/api/SecureCategory";
+} from "@/api/dataSecure";
 
 export default {
   data() {

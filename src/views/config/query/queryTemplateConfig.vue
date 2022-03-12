@@ -182,7 +182,7 @@ import {
   queryQueryTemplate,
   updQueryTemplate,
   delQueryTemplate,
-} from "@/api/QueryTemplate";
+} from "@/api/dataQuery";
 
 export default {
   data() {

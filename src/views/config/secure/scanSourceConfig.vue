@@ -199,7 +199,7 @@ import {
   querySecureScanSource,
   updSecureScanSource,
   delSecureScanSource,
-} from "@/api/SecureScanSource";
+} from "@/api/dataSecure";
 
 export default {
   data() {

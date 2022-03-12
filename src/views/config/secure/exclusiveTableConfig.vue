@@ -179,9 +179,9 @@ import {
   delSecureExclusiveTable,
   queryTableSchema,
   queryTableName,
-} from "@/api/SecureExclusiveTable";
+} from "@/api/dataSecure";
 
-import { querySourceIdMap } from "@/api/QuerySource";
+import { querySourceIdMap } from "@/api/dataSecure";
 
 export default {
   data() {

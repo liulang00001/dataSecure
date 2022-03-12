@@ -259,7 +259,7 @@ import {
   queryQuerySource,
   updQuerySource,
   delQuerySource,
-} from "@/api/QuerySource";
+} from "@/api/dataQuery";
 
 export default {
   data() {

@@ -41,9 +41,9 @@
 </template>
 
 <script>
-import { queryOrderTypeMap } from "@/api/QueryOrderConfig";
+import { queryOrderTypeMap } from "@/api/dataQuery";
 
-import { queryHierarchy } from "@/api/QueryOrderRelevance";
+import { queryHierarchy } from "@/api/dataQuery";
 
 export default {
   data() {

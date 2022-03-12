@@ -47,6 +47,14 @@ export const constantRouterMap = [
         component: () => import('@/views/secure/fieldManagement'),
         meta: { title: 'fieldManagement', icon: 'chart' }
       },
+
+
+      {
+        path: 'fieldManagement',
+        name: 'fieldManagement',
+        component: () => import('@/views/secure/fieldManagement'),
+        meta: { title: 'fieldManagement', icon: 'chart' }
+      },
       
     ]
   },
@@ -69,6 +77,80 @@ export const constantRouterMap = [
             component: () => import('@/views/config/common/businessDomain'),
             meta: { title: 'businessDomain', icon: 'chart' }
           },
+
+          {
+            path: 'businessDomain',
+            name: 'businessDomain',
+            component: () => import('@/views/config/common/businessDomain'),
+            meta: { title: 'businessDomain', icon: 'chart' }
+          },
+        ]
+      },
+
+      {
+        path: '/query',
+        component: Layout,
+        name: 'query',
+        meta: { title: 'query', icon: 'bug' },
+        children:[
+          {
+            path: 'orderDependenceConfig',
+            name: 'orderDependenceConfig',
+            component: () => import('@/views/config/query/orderDependenceConfig'),
+            meta: { title: 'orderDependenceConfig', icon: 'chart' }
+          },
+
+          {
+            path: 'orderTypeConfig',
+            name: 'orderTypeConfig',
+            component: () => import('@/views/config/query/orderTypeConfig'),
+            meta: { title: 'orderTypeConfig', icon: 'chart' }
+          },
+
+          {
+            path: 'querySourceConfig',
+            name: 'querySourceConfig',
+            component: () => import('@/views/config/query/querySourceConfig'),
+            meta: { title: 'querySourceConfig', icon: 'chart' }
+          },
+
+          {
+            path: 'querytemplateConfig',
+            name: 'querytemplateConfig',
+            component: () => import('@/views/config/query/querytemplateConfig'),
+            meta: { title: 'querytemplateConfig', icon: 'chart' }
+          },
+          
+        ]
+      },
+
+      {
+        path: '/secure',
+        component: Layout,
+        name: 'secure',
+        meta: { title: 'secure', icon: 'bug' },
+        children:[
+          {
+            path: 'dataLevelDefine',
+            name: 'dataLevelDefine',
+            component: () => import('@/views/config/secure/dataLevelDefine'),
+            meta: { title: 'dataLevelDefine', icon: 'chart' }
+          },
+
+          {
+            path: 'exclusiveTableConfig',
+            name: 'exclusiveTableConfig',
+            component: () => import('@/views/config/secure/exclusiveTableConfig'),
+            meta: { title: 'exclusiveTableConfig', icon: 'chart' }
+          },
+
+          {
+            path: 'scanSourceConfig',
+            name: 'scanSourceConfig',
+            component: () => import('@/views/config/secure/scanSourceConfig'),
+            meta: { title: 'scanSourceConfig', icon: 'chart' }
+          },
+          
         ]
       },
       

@@ -127,7 +127,7 @@ import {
   queryQueryOrderConfig,
   updQueryOrderConfig,
   delQueryOrderConfig,
-} from "@/api/queryOrderConfig";
+} from "@/api/dataQuery";
 
 export default {
   data() {
