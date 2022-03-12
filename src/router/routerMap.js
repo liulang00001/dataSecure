@@ -36,90 +36,131 @@ export const constantRouterMap = [
     }]
   },
   {
-    path: '/global',
-    component: Layout,
-    name: 'global',
-    meta: { title: 'global', icon: 'bug' },
-    children: [
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/global/management/fintechDomain'),
-        meta: { title: 'management', icon: 'chart' }
-      }
-    ]
-  },
-  {
-    path: '/query',
-    component: Layout,
-    name: 'query',
-    meta: { title: 'query', icon: 'drag' },
-    children: [
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/query/management/queryOrderConfig'),
-        meta: { title: 'management', icon: 'cms' }
-      },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/query/management/queryOrderRelevance'),
-        meta: { title: 'management', icon: 'cms' }
-      },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/query/management/querySource'),
-        meta: { title: 'management', icon: 'cms' }
-      },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/query/management/queryTemplate'),
-        meta: { title: 'management', icon: 'cms' }
-      }
-    ]
-  },
-  {
     path: '/secure',
     component: Layout,
     name: 'secure',
-    meta: { title: 'secure', icon: 'drag' },
+    meta: { title: 'secure', icon: 'bug' },
     children: [
       {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/secure/management/secureCategory'),
-        meta: { title: 'management', icon: 'cms' }
+        path: 'fieldManagement',
+        name: 'fieldManagement',
+        component: () => import('@/views/secure/fieldManagement'),
+        meta: { title: 'fieldManagement', icon: 'chart' }
       },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/secure/management/secureExclusiveTable'),
-        meta: { title: 'management', icon: 'cms' }
-      },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/secure/management/secureField'),
-        meta: { title: 'management', icon: 'cms' }
-      },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/secure/management/secureLevel'),
-        meta: { title: 'management', icon: 'cms' }
-      },
-      {
-        path: 'management',
-        name: 'management',
-        component: () => import('@/views/secure/management/secureScanSource'),
-        meta: { title: 'management', icon: 'cms' }
-      }
+      
     ]
-  }
+  },
+
+  {
+    path: '/config',
+    component: Layout,
+    name: 'config',
+    meta: { title: 'config', icon: 'bug' },
+    children: [
+      {
+        path: '/common',
+        component: Layout,
+        name: 'common',
+        meta: { title: 'common', icon: 'bug' },
+        children:[
+          {
+            path: 'businessDomain',
+            name: 'businessDomain',
+            component: () => import('@/views/config/common/businessDomain'),
+            meta: { title: 'businessDomain', icon: 'chart' }
+          },
+        ]
+      },
+      
+    ]
+  },
+
 ];
+  // {
+  //   path: '/global',
+  //   component: Layout,
+  //   name: 'global',
+  //   meta: { title: 'global', icon: 'bug' },
+  //   children: [
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/config/common/businessDomain'),
+  //       meta: { title: 'management', icon: 'chart' }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/query',
+  //   component: Layout,
+  //   name: 'query',
+  //   meta: { title: 'query', icon: 'drag' },
+  //   children: [
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/query/management/queryOrderConfig'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/query/management/queryOrderRelevance'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/query/management/querySource'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/query/management/queryTemplate'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/secure',
+  //   component: Layout,
+  //   name: 'secure',
+  //   meta: { title: 'secure', icon: 'drag' },
+  //   children: [
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/secure/management/secureCategory'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/secure/management/secureExclusiveTable'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/secure/management/secureField'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/secure/management/secureLevel'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     },
+  //     {
+  //       path: 'management',
+  //       name: 'management',
+  //       component: () => import('@/views/secure/management/secureScanSource'),
+  //       meta: { title: 'management', icon: 'cms' }
+  //     }
+  //   ]
+  // }
+// ];
 
 // 动态路由页面
 export const asyncRouterMap = [

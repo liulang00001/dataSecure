@@ -11,7 +11,16 @@ export default {
     queryTemplate: '数据查询模板表',
     secureCategory: '数据安全目录表',
     secureExclusiveTable: '数据安全待排除表',
-    secureField: '数据安全字段表',
+    fieldManagement: '字段管理',
+    secure:'数据安全',
+    config:'配置管理',
+    common:'公共配置',
+    businessDomain:'业务域配置',
+    // config:'',
+    // config:'',
+    // config:'',
+    // config:'',
+
     secureLevel: '数据安全等级表',
     secureScanSource: '数据安全扫描数据源'
   },

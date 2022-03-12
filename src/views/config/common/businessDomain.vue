@@ -114,7 +114,7 @@ import {
   queryFintechDomain,
   updFintechDomain,
   delFintechDomain,
-} from "@/api/fintechDomain";
+} from "@/api/dataQuery";
 
 export default {
   data() {
